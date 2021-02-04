@@ -6,16 +6,12 @@ function DogPics() {
   const [images, setImages] = useState([]);
 
   useEffect(() => {
-    console.log("useEffect");
-    fetch("https://dog.ceo/api/breeds/image/random/3")
+    fetch("https://dog.ceo/api/breeds/image/random/4")
       .then((r) => r.json())
       .then((data) => {
-        console.log("setState");
-        setImages(data.messages);
+        setImages(data);
       });
   });
-
-  console.log("render");
 
   return (
     <div>
@@ -24,6 +20,6 @@ function DogPics() {
       ))}
     </div>
   );
-}
+} 
 
 export default DogPics;
